@@ -26,12 +26,16 @@ export default function HomePage() {
     <div className="grid h-full w-full gap-3 px-2 py-2 sm:pl-[4em] md:grid-flow-col md:grid-rows-12">
       <InvoicesTable className="md:row-span-7 md:min-w-[45dvw]" />
 
-      <Container className="min-h-[20em] md:row-span-5">
+      <Container id="chart-container" className="min-h-[20em] md:row-span-5">
         <h1 className="text-3xl font-bold text-white">Financial Overview</h1>
         <p className="text-white">Income, Expenses, and Balance</p>
         <Cart chartData={chartData} className="h-4 rounded-r-sm md:h-8" />
       </Container>
-      <Container className="overflow-x-auto px-2 md:row-span-2">
+
+      <Container
+        id="transfer-container"
+        className="overflow-x-auto px-2 md:row-span-2"
+      >
         <Transfer
           trigger={
             <Avatar
@@ -42,6 +46,7 @@ export default function HomePage() {
           }
         />
       </Container>
+
       <AccountCard
         balance={data?.balance}
         expenses={data?.expenses}
@@ -49,7 +54,10 @@ export default function HomePage() {
         className="md:row-span-4"
       />
 
-      <Container className="flex flex-col gap-3 md:row-span-6">
+      <Container
+        id="topup-container"
+        className="flex flex-col gap-3 md:row-span-6"
+      >
         <span className="py-3 text-2xl font-bold text-white">
           Top up Withdrow operation
         </span>

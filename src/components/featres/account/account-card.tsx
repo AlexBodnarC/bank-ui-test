@@ -16,6 +16,7 @@ export default function AccountCard({
 }) {
   return (
     <Container
+      id="account-card"
       className={cn(
         className,
         `flex flex-col justify-between rounded-lg border-2 border-white bg-transparent p-3 text-white`,

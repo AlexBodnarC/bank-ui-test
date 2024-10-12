@@ -1,13 +1,12 @@
 import { type ReactNode } from "react";
 import { cn } from "~/utils/tailwind-merge";
 
-export default function Container({
-  className,
-  children,
-}: {
+interface IContainer extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
-}) {
+}
+
+export default function Container({ className, children }: IContainer) {
   return (
     <div
       className={cn(

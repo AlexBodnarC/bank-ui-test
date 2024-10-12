@@ -18,7 +18,11 @@ export default function InvoicesTable({ className }: { className?: string }) {
   });
 
   return (
-    <Table aria-label="Invoices Table" className={cn(className)}>
+    <Table
+      aria-label="Invoices Table"
+      id="invoices-table"
+      className={cn(className)}
+    >
       <TableHeader>
         <TableColumn>Invoice</TableColumn>
         <TableColumn>Type</TableColumn>
