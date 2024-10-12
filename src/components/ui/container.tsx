@@ -6,9 +6,14 @@ interface IContainer extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-export default function Container({ className, children }: IContainer) {
+export default function Container({
+  className,
+  children,
+  ...rest
+}: IContainer) {
   return (
     <div
+      {...rest}
       className={cn(
         className,
         `rounded-lg border-2 border-white bg-transparent p-3`,
